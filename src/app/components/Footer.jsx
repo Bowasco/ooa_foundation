@@ -35,16 +35,16 @@ const Footer = () => {
                 About Us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a className="hover:text-white">
                 Our Work
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a className="hover:text-white">
-                Partners
+                Our Partners
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="/faq" className="hover:text-white">
                 FAQ
