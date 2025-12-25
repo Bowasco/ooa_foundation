@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Eye, Target } from "lucide-react";
 import founder from "../../public/images/founder.jpeg";
-import partnership from "../../public/images/partnership.webp";
+import partnership from "../../public/images/partnership.jpg";
 import { useState } from "react";
 
 export default function Home() {
@@ -32,18 +32,21 @@ export default function Home() {
             <Image
               src={founder}
               alt="Founder of Tanoto Foundation"
-              className="h-full w-[350px] object-cover"
+              className="h-full w-full object-cover"
             />
 
             {/* Quote Overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-6 md:p-8">
               <p className="text-white text-sm md:text-base leading-relaxed mb-4">
-                “Every person should have the opportunity to realize his or her
-                full potential.”
+                “Education is the most powerful tool we can use to change the
+                lives. At the Olajide Awe foundation, we believe that every
+                child deserves the opportunity to reach their full potential.”
               </p>
 
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Olajide Awe</span>
+                <span className="font-semibold text-white text-[30px]">
+                  Olajide Awe
+                </span>
                 <br />
                 Founder of Ogbeni Olajide Awe Foundation
               </p>
@@ -54,7 +57,7 @@ export default function Home() {
       <section className="bg-[#f5faf8] py-10">
         <div className="container mx-auto px-6">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold text-green-800 mb-4">
               Our Purpose
             </h2>
@@ -78,8 +81,9 @@ export default function Home() {
               </div>
 
               <p className="text-gray-600 leading-relaxed">
-                To create a society where every child, regardless of background,
-                has access to quality education and opportunities to succeed.
+                To be a beacon of hope and empowerment, transforming lives and
+                fostering a society where every individual has access to
+                opportunities for growth and development
               </p>
             </div>
 
@@ -95,17 +99,15 @@ export default function Home() {
               </div>
 
               <p className="text-gray-600 leading-relaxed">
-                To empower lives, inspire hope, and provide sustainable
-                solutions to challenges faced by the less privileged, focusing
-                on education as a cornerstone for development. We are committed
-                to building a legacy of impact and transformation for
-                generations to come.
+                To empower the less privileged by providing access to quality
+                education, skill acquisition, and resources enabling them to be
+                better and live a more fulfilling life
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-[#f5faf8] py-16">
+      <section className="bg-[#f5faf8]">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           {/* Left Text */}
           <div>

@@ -75,7 +75,7 @@ const Page = () => {
             />
           </div>
 
-          <div className=" px-10 py-16 md:w-[45%]">
+          <div className=" px-10 py-16 md:w-[48%]">
             <div className="w-full">
               <h1 className="text-3xl font-semibold text-green-800 mb-2">
                 Register With Us
@@ -107,7 +107,7 @@ const Page = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Your name"
+                      placeholder="Full Name"
                       required
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
@@ -122,7 +122,7 @@ const Page = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="you@company.com"
+                      placeholder="email.com"
                       required
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
@@ -139,7 +139,6 @@ const Page = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="1234 5678"
                       required
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
@@ -201,7 +200,6 @@ const Page = () => {
                     name="guardian_profession"
                     value={formData.guardian_profession}
                     onChange={handleChange}
-                    placeholder="Profession"
                     required
                     className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                   />
@@ -218,7 +216,6 @@ const Page = () => {
                       name="secondary_school"
                       value={formData.secondary_school}
                       onChange={handleChange}
-                      placeholder="School name"
                       required
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
@@ -234,7 +231,6 @@ const Page = () => {
                       name="preferred_institution"
                       value={formData.preferred_institution}
                       onChange={handleChange}
-                      placeholder="Institution name"
                       required
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />

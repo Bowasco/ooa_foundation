@@ -61,7 +61,6 @@ const Footer = () => {
             <li>Education</li>
             <li>Healthcare</li>
             <li>Leadership Development</li>
-            <li>Research Initiatives</li>
           </ul>
         </div>
 
