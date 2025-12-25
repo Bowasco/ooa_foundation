@@ -97,7 +97,6 @@ const Page = () => {
               )}
 
               <form className="space-y-5" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm text-gray-700">
                       FULL NAME <span className="text-red-500">*</span>
@@ -127,9 +126,7 @@ const Page = () => {
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
                   </div>
-                </div>
 
-                <div className="md:grid md:grid-cols-2 md:gap-4">
                   <div>
                     <label className="text-sm text-gray-700">
                       PHONE NUMBER <span className="text-red-500">*</span>
@@ -153,13 +150,12 @@ const Page = () => {
                       value={formData.gender}
                       onChange={handleChange}
                       required
-                      className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
+                      className="mt-1 w-full border rounded-md px-4 py-[10px] focus:outline-none focus:ring-2 focus:ring-green-700"
                     >
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select>
                   </div>
-                </div>
 
                 <div>
                   <label className="text-sm text-gray-700">
@@ -184,7 +180,6 @@ const Page = () => {
                     name="hometown"
                     value={formData.hometown}
                     onChange={handleChange}
-                    placeholder="Your hometown"
                     required
                     className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                   />
@@ -192,7 +187,7 @@ const Page = () => {
 
                 <div>
                   <label className="text-sm text-gray-700">
-                    Guardian/Parent &apos; s profession{" "}
+                    GUARDIAN/PARENT&apos;S PROFESSION{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -205,10 +200,9 @@ const Page = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
                   <div>
                     <label className="text-sm text-gray-700">
-                      Secondary school attended{" "}
+                      SECONDARY SCHOOL ATTENDED{" "}
                       <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -223,7 +217,7 @@ const Page = () => {
 
                   <div>
                     <label className="text-sm text-gray-700">
-                      Preferred tertiary institution{" "}
+                      PREFFERED TERTIARY INSTITUTION{" "}
                       <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -235,15 +229,14 @@ const Page = () => {
                       className="mt-1 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700"
                     />
                   </div>
-                </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-yellow-600 text-white py-3 rounded-md font-medium hover:bg-yellow-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-yellow-400 text-white py-3 rounded-md font-medium hover:bg-yellow-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {loading ? "Submitting..." : "Submit"}
+                  {loading ? "SUBMITTING..." : "SUBMIT"}
                 </button>
               </form>
             </div>
