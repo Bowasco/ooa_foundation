@@ -101,7 +101,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-400">
-        © 2025 Ogbeni Olajide Awe Foundation. All rights reserved.
+        © 2026 Ogbeni Olajide Awe Foundation. All rights reserved.
       </div>
     </footer>
   );
