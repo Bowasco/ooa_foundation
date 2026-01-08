@@ -23,6 +23,7 @@ const Page = () => {
     phone: "",
     gender: "Male",
     profile_code: "",
+    jamb_score: "",
     hometown: "",
     guardian_profession: "",
     secondary_school: "",
@@ -52,6 +53,10 @@ const Page = () => {
 
     if (!profileCodeRegex.test(formData.profile_code)) {
       newErrors.profile_code = "Profile code must be alphanumeric";
+    }
+
+    if (!profileCodeRegex.test(formData.jamb_score)) {
+      newErrors.profile_code = "Profile code must be numeric";
     }
 
     if (!formData.hometown) {
@@ -101,6 +106,7 @@ const Page = () => {
         phone: "",
         gender: "Male",
         profile_code: "",
+        jamb_score: "",
         hometown: "",
         guardian_profession: "",
         secondary_school: "",
@@ -215,6 +221,21 @@ const Page = () => {
                 {errors.profile_code && (
                   <p className="text-red-500 text-sm">
                     {errors.profile_code}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="text-sm text-gray-700">JAMB SCORE *</label>
+                <input
+                  name="jamb_score"
+                  value={formData.jamb_score}
+                  onChange={handleChange}
+                  className="mt-1 w-full border rounded-md px-4 py-2"
+                />
+                {errors.profile_code && (
+                  <p className="text-red-500 text-sm">
+                    {errors.jamb_score}
                   </p>
                 )}
               </div>

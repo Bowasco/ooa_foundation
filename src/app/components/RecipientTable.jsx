@@ -43,12 +43,12 @@ export default function RecipientTable() {
       <table className="w-full border">
         <thead className="bg-gray-100">
           <tr>
-            <th className="border p-2">Name</th>
+            <th className="border p-2">Full Name</th>
             <th className="border p-2">Email</th>
-            <th className="border p-2">Phone</th>
+            <th className="border p-2">Phone Number</th>
             <th className="border p-2">Gender</th>
             <th className="border p-2">Profile Code</th>
-            <th className="border p-2">Actions</th>
+            <th className="border p-2">Jamb Score</th>
           </tr>
         </thead>
 
@@ -60,17 +60,7 @@ export default function RecipientTable() {
               <td className="border p-2">{r.phone}</td>
               <td className="border p-2">{r.gender}</td>
               <td className="border p-2">{r.profile_code}</td>
-              <td className="border p-2 flex gap-2">
-                <button className="bg-blue-500 text-white px-3 py-1 rounded">
-                  Edit
-                </button>
-                <button
-                  className="bg-red-500 text-white px-3 py-1 rounded"
-                  onClick={() => deleteRecipient(r.id)}
-                >
-                  Delete
-                </button>
-              </td>
+              <td className="border p-2">{r.jamb_score}</td>
             </tr>
           ))}
         </tbody>
