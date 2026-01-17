@@ -13,23 +13,27 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href={"/"} className="text-xl font-semibold text-green-800">
           <Image src={logo} alt="" className="w-[100px] h-[40px]" />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+          <Link href={"/"} className="hover:text-green-800 cursor-pointer">
+            Home
+          </Link>
           <Link href={"/about"} className="hover:text-green-800 cursor-pointer">
             About Us
           </Link>
-          {/* <Link className="hover:text-green-800 cursor-pointer">Our Work</Link> */}
           <Link
             href={"/register"}
             className="hover:text-green-800 cursor-pointer"
           >
             Register with us
           </Link>
-          <Link href={"/gallery"} className="hover:text-green-800 cursor-pointer">
+          <Link
+            href={"/gallery"}
+            className="hover:text-green-800 cursor-pointer"
+          >
             Gallery
           </Link>
         </ul>
@@ -76,9 +80,8 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden bg-white border-t">
           <ul className="flex flex-col gap-4 px-6 py-6 text-gray-700 text-sm">
+            <Link href={"/"}>Home</Link>
             <Link href={"/about"}>About Us</Link>
-            {/* <li>Our Work</li> */}
-            {/* <li>Programs</li> */}
             <Link href={"/register"}>Register with us</Link>
             <Link href={"/gallery"}>Gallery</Link>
 

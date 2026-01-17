@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Image from "next/image";
 
 const page = () => {
@@ -57,42 +55,38 @@ const page = () => {
     { id: 49, src: "/images/47.jpg", alt: "Event 49" },
   ];
   return (
-    <div>
-      <Navbar />
-      <main>
-        <section
-          className="w-full h-[65vh] bg-cover bg-center relative"
-          style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center">
-            <h2 className="text-white text-4xl md:text-[60px] font-bold">
-              Gallery
-            </h2>
-            <p className="mt-3 text-white/90 text-lg md:text-[20px]">
-              Ogbeni Olajide Awe Foundation
-            </p>
-          </div>
-        </section>
-        <div className="min-h-screen bg-gray-100 p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {galleryImages.map((image) => (
-              <div
-                key={image.id}
-                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white aspect-square"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
+    <>
+      <section
+        className="w-full h-[65vh] bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center">
+          <h2 className="text-white text-4xl md:text-[60px] font-bold">
+            Gallery
+          </h2>
+          <p className="mt-3 text-white/90 text-lg md:text-[20px]">
+            Ogbeni Olajide Awe Foundation
+          </p>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+      <div className="min-h-screen bg-gray-100 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {galleryImages.map((image) => (
+            <div
+              key={image.id}
+              className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white aspect-square"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

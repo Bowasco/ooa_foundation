@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { Eye, Target } from "lucide-react";
 import founder from "../../public/images/founder.jpg";
 import hero from "../../public/images/hero.jpg";
@@ -93,7 +91,6 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       <div className="relative w-full h-screen overflow-hidden bg-gray-900">
         {slides.map((slide, index) => (
           <div
@@ -338,8 +335,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

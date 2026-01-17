@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function Faq({ faqs }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -14,7 +12,6 @@ export default function Faq({ faqs }) {
 
   return (
     <>
-      <Navbar />
       <section
         className="w-full h-[65vh] bg-cover bg-center relative"
         style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
@@ -63,7 +60,6 @@ export default function Faq({ faqs }) {
           ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

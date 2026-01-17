@@ -1,12 +1,8 @@
 "use client";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
       <section
         className="w-full h-[65vh] bg-cover bg-center relative"
         style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
@@ -180,7 +176,6 @@ export default function AboutPage() {
           </p>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

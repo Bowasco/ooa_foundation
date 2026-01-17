@@ -24,12 +24,12 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="h-96 flex items-center justify-center">
       <form
         onSubmit={handleLogin}
-        className="bg-white p-6 rounded shadow w-96"
+        className="bg-white p-6 rounded shadow-2xl w-96"
       >
-        <h1 className="text-xl font-bold mb-4">
+        <h1 className="text-[30px] text-center font-bold mb-4">
           Admin Login
         </h1>
 
@@ -57,7 +57,7 @@ export default function AdminLogin() {
 
         <button
           type="submit"
-          className="w-full bg-black text-white p-2 rounded"
+          className="w-full bg-black hover:bg-black/90 cursor-pointer text-white p-2 rounded"
         >
           Login
         </button>

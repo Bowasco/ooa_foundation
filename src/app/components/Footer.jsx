@@ -21,10 +21,10 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-yellow-400 mb-4 uppercase">
+          <h4 className="text-[20px] font-semibold text-yellow-400 mb-4 uppercase">
             Company
           </h4>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-2 text-[15px] text-gray-300">
             <li>
               <a href="/register" className="hover:text-white">
                 Register with us
@@ -59,10 +59,10 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-yellow-400 mb-4 uppercase">
+          <h4 className="text-[20px] font-semibold text-yellow-400 mb-4 uppercase">
             Programs
           </h4>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-2 text-[15px] text-gray-300">
             <li>Education</li>
             <li>Healthcare</li>
             <li>Leadership Development</li>
@@ -70,15 +70,15 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-yellow-400 mb-4 uppercase">
+          <h4 className="text-[20px] font-semibold text-yellow-400 mb-4 uppercase">
             Get in Touch
           </h4>
 
-          <p className="text-sm text-gray-300 mb-4">
+          <p className="text-[15px] text-gray-300 mb-4">
             ooafoundation4all@gmail.com
           </p>
 
-          <p className="text-sm text-gray-300 mb-4">+234 812 293 9984</p>
+          <p className="text-[15px] text-gray-300 mb-4">+234 812 293 9984</p>
 
           <ul className="flex gap-4">
             <Link
