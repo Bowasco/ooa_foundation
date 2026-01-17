@@ -11,7 +11,7 @@ export default function AboutPage() {
         className="w-full h-[65vh] bg-cover bg-center relative"
         style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
       >
-        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center">
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center">
           <h2 className="text-white text-4xl md:text-[60px] font-bold">
             About Us
           </h2>

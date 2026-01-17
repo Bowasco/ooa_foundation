@@ -15,6 +15,19 @@ export default function Faq({ faqs }) {
   return (
     <>
       <Navbar />
+      <section
+        className="w-full h-[65vh] bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center">
+          <h2 className="text-white text-4xl md:text-[50px] font-bold">
+            FREQUENTLY ASKED <br /> QUESTIONS
+          </h2>
+          <p className="mt-3 text-white/90 text-lg md:text-[20px]">
+            Ogbeni Olajide Awe Foundation
+          </p>
+        </div>
+      </section>
       <div className="py-16">
         <div className="mb-10 text-center">
           <h2 className="text-[40px] font-semibold mb-2">
