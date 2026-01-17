@@ -138,12 +138,7 @@ export default function RecipientTable() {
 
   return (
     <>
-      <div className="mb-4 flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold">
-            Recipients ({recipients.length})
-          </h2>
-        </div>
+      <div className="mb-4 flex justify-end items-center">
         <button
           onClick={downloadCSV}
           className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition flex items-center gap-2"

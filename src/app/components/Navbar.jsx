@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
-import logo from "../../../public/images/logo.jpg"
+import logo from "../../../public/images/logo.jpg";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,9 +18,10 @@ const Navbar = () => {
           <Image src={logo} alt="" className="w-[100px] h-[40px]" />
         </Link>
 
-        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8 text-sm text-gray-700">
-          <Link href={"/about"} className="hover:text-green-800 cursor-pointer">About Us</Link>
+          <Link href={"/about"} className="hover:text-green-800 cursor-pointer">
+            About Us
+          </Link>
           {/* <Link className="hover:text-green-800 cursor-pointer">Our Work</Link> */}
           <Link
             href={"/register"}
@@ -28,12 +29,11 @@ const Navbar = () => {
           >
             Register with us
           </Link>
-          <button className="hover:text-green-800 cursor-pointer">
-            Our Partners
-          </button>
+          <Link href={"/gallery"} className="hover:text-green-800 cursor-pointer">
+            Gallery
+          </Link>
         </ul>
 
-        {/* CTA */}
         <div className="hidden md:block">
           <button
             onClick={() => setModalOpen(true)}
@@ -64,7 +64,6 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700"
           onClick={() => setOpen(!open)}
@@ -81,7 +80,7 @@ const Navbar = () => {
             {/* <li>Our Work</li> */}
             {/* <li>Programs</li> */}
             <Link href={"/register"}>Register with us</Link>
-            <li>Our Partners</li>
+            <Link href={"/gallery"}>Gallery</Link>
 
             <button className="mt-4 border border-yellow-600 text-yellow-600 px-5 py-2 rounded-md text-sm font-medium">
               Partner With Us

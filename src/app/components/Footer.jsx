@@ -50,6 +50,11 @@ const Footer = () => {
                 FAQ
               </a>
             </li>
+            <li>
+              <a href="/gallery" className="hover:text-white">
+                Gallery
+              </a>
+            </li>
           </ul>
         </div>
 
