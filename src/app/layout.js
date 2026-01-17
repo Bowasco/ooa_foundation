@@ -15,9 +15,6 @@ export const metadata = {
   title: "OOA Foundation",
   description:
     "Empowering students through JAMB registration and educational support",
-  icons: {
-    icons: "/icon.jpg",
-  },
 };
 
 export default function RootLayout({ children }) {
