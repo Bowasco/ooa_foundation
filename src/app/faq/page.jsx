@@ -39,7 +39,7 @@ export default function Faq({ faqs }) {
             <div key={index} className="border-b border-gray-200">
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex justify-between items-center px-6 py-4 text-left"
+                className="w-full flex justify-between items-center py-4 text-left"
               >
                 <span className="font-medium text-gray-800">
                   {faq.question}

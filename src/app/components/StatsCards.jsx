@@ -19,7 +19,7 @@ export default function StatsCards() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div className="">
       <StatCard
         title="Total Registered Users"
         value={total}

@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <button
             onClick={() => setModalOpen(true)}
-            className="border border-yellow-600 text-yellow-600 px-5 py-2 rounded-md text-sm font-medium hover:bg-yellow-600 hover:text-white transition"
+            className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-yellow-600 hover:text-white transition"
           >
             Partner With Us
           </button>

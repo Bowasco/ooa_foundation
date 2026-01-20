@@ -244,7 +244,7 @@ export default function Home() {
       <section className="bg-[#f5faf8] py-10">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-green-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#356149] mb-4">
               Global Partnerships
             </h2>
 
@@ -257,7 +257,7 @@ export default function Home() {
 
             <button
               onClick={() => setModalOpen(true)}
-              className="border border-yellow-600 text-yellow-600 px-6 py-3 rounded-md font-medium hover:bg-yellow-600 hover:text-white transition"
+              className="border border-[#356149] text-[#356149] px-6 py-3 rounded-md font-medium hover:bg-yellow-600 hover:text-white transition"
             >
               PARTNER WITH US
             </button>
