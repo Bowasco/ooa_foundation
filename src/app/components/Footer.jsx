@@ -1,10 +1,12 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import logo from "../../../public/images/logo.jpg"
+import logo from "../../../public/images/logo.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#3f4f44] text-white pt-16 pb-6">
       <div className="container mx-auto px-6 grid gap-10 md:grid-cols-4">
@@ -15,8 +17,8 @@ const Footer = () => {
             className="w-[180px] h-[120px]"
           />
           <p className="text-sm text-gray-300 leading-relaxed">
-            We harness the transformative power of education to realize people &apos;s
-            full potential.
+            We harness the transformative power of education to realize people
+            &apos;s full potential.
           </p>
         </div>
 
@@ -82,7 +84,9 @@ const Footer = () => {
 
           <ul className="flex gap-4">
             <Link
-              href={"https://www.facebook.com/share/1bKLB1AzKJ/?mibextid=wwXIfr"}
+              href={
+                "https://www.facebook.com/share/1bKLB1AzKJ/?mibextid=wwXIfr"
+              }
               className="p-2 bg-white/10 rounded hover:bg-white/20"
             >
               <FaFacebookF />
@@ -106,7 +110,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-400">
-        © 2026 Ogbeni Olajide Awe Foundation. All rights reserved.
+        © {currentYear} Ogbeni Olajide Awe Foundation. All rights reserved.
       </div>
     </footer>
   );
