@@ -204,7 +204,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= PURPOSE ================= */}
       <section className="bg-[#f5faf8] py-16">
         <div className="container mx-auto px-6">
           <motion.div
@@ -269,7 +268,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= IMPACT ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto text-center px-4">
           <motion.h2
@@ -315,7 +313,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= PARTNERSHIP ================= */}
       <section className="bg-[#f5faf8] py-16">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -391,7 +388,6 @@ export default function Home() {
         </AnimatePresence>
       </section>
 
-      {/* ================= FAQ ================= */}
       <section className="py-16">
         <div className="container mx-auto px-6">
           <motion.h2
@@ -455,7 +451,6 @@ export default function Home() {
   );
 }
 
-/* ================= DATA ================= */
 const homeFaqs = [
   {
     question: "What is the mission of the foundation?",
