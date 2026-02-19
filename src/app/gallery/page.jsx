@@ -1,5 +1,8 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const page = () => {
   const galleryImages = [
@@ -54,6 +57,25 @@ const page = () => {
     { id: 46, src: "/images/hero.jpg", alt: "Event 46" },
     { id: 49, src: "/images/47.jpg", alt: "Event 49" },
   ];
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
   return (
     <>
       <section
@@ -70,10 +92,16 @@ const page = () => {
         </div>
       </section>
       <div className="min-h-screen bg-gray-100 p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
           {galleryImages.map((image) => (
-            <div
+            <motion.div
               key={image.id}
+              variants={item}
               className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white aspect-square"
             >
               <Image
@@ -82,9 +110,9 @@ const page = () => {
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );

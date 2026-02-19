@@ -17,7 +17,7 @@ const Navbar = () => {
           <Image src={logo} alt="" className="w-[100px] h-[40px]" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+        <ul className="hidden md:flex items-center gap-8 text-[15px] text-gray-700">
           <Link href={"/"} className="hover:text-green-800 cursor-pointer">
             Home
           </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <button
             onClick={() => setModalOpen(true)}
-            className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-yellow-600 hover:text-white transition"
+            className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-green-600 hover:text-white hover:border-0 transition-all duration-300 ease-in-out"
           >
             Partner With Us
           </button>
@@ -85,7 +85,10 @@ const Navbar = () => {
             <Link href={"/register"}>Register with us</Link>
             <Link href={"/gallery"}>Gallery</Link>
 
-            <button className="mt-4 border border-yellow-600 text-yellow-600 px-5 py-2 rounded-md text-sm font-medium">
+            <button
+              onClick={() => setModalOpen(true)}
+              className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-green-600 hover:text-white hover:border-0 transition-all duration-300 ease-in-out"
+            >
               Partner With Us
             </button>
           </ul>
