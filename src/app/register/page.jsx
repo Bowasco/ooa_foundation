@@ -5,7 +5,6 @@ import Image from "next/image";
 import register from "../../../public/images/register.jpg";
 import { supabase } from "@/lib/supabaseClient";
 
-/* ================= REGEX ================= */
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const profileCodeRegex = /^[a-zA-Z0-9_-]+$/;
 
@@ -27,17 +26,14 @@ const Page = () => {
     preferred_institution: "",
   });
 
-  /* ================= HANDLE CHANGE ================= */
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Only allow numbers for phone, jamb_score, and profile_code
     if (name === "phone") {
       const numericValue = value.replace(/\D/g, "");
       setFormData({ ...formData, [name]: numericValue });
     } else if (name === "jamb_score") {
       const numericValue = value.replace(/\D/g, "");
-      // Ensure JAMB score doesn't exceed 400
       if (numericValue === "" || parseInt(numericValue) <= 400) {
         setFormData({ ...formData, [name]: numericValue });
       }
@@ -49,39 +45,33 @@ const Page = () => {
     }
   };
 
-  /* ================= VALIDATION ================= */
   const validateForm = () => {
     let newErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Full name is required";
     } else if (formData.name.trim().length < 5) {
       newErrors.name = "Full name must be at least 5 characters";
     }
 
-    // Email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "Enter a valid email address";
     }
 
-    // Phone validation
     if (!formData.phone) {
       newErrors.phone = "Phone number is required";
     } else if (formData.phone.length !== 11) {
       newErrors.phone = "Phone number must be exactly 11 digits";
     }
 
-    // Profile code validation
     if (!formData.profile_code) {
       newErrors.profile_code = "Profile code is required";
     } else if (formData.profile_code.length !== 10) {
       newErrors.profile_code = "Profile code must be 10 digits";
     }
 
-    // JAMB score validation
     if (!formData.jamb_score) {
       newErrors.jamb_score = "JAMB score is required";
     } else if (parseInt(formData.jamb_score) < 50) {
@@ -90,22 +80,18 @@ const Page = () => {
       newErrors.jamb_score = "JAMB score cannot exceed 400";
     }
 
-    // Hometown validation
     if (!formData.hometown.trim()) {
       newErrors.hometown = "Hometown is required";
     }
 
-    // Guardian profession validation
     if (!formData.guardian_profession.trim()) {
       newErrors.guardian_profession = "Guardian profession is required";
     }
 
-    // Secondary school validation
     if (!formData.secondary_school.trim()) {
       newErrors.secondary_school = "Secondary school is required";
     }
 
-    // Preferred institution validation
     if (!formData.preferred_institution.trim()) {
       newErrors.preferred_institution = "Preferred institution is required";
     }
@@ -114,7 +100,6 @@ const Page = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  /* ================= HANDLE SUBMIT ================= */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -128,7 +113,6 @@ const Page = () => {
     setLoading(true);
 
     try {
-      // Trim all text fields before submitting
       const cleanedData = {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
@@ -149,7 +133,6 @@ const Page = () => {
       if (error) {
         console.error("Supabase error:", error);
         
-        // Check for specific error types
         if (error.code === "23505") {
           setMessage("This email or profile code is already registered.");
         } else {
@@ -157,7 +140,6 @@ const Page = () => {
         }
       } else {
         setMessage("Registration Successful!");
-        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -170,7 +152,6 @@ const Page = () => {
           secondary_school: "",
           preferred_institution: "",
         });
-        // Scroll to top to show success message
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } catch (err) {
@@ -185,7 +166,6 @@ const Page = () => {
     <div>
       <section className="min-h-screen bg-[#f5faf8]">
         <div className="flex min-h-screen">
-          {/* Image Section */}
           <div className="hidden md:block md:w-[50%]">
             <Image
               src={register}
@@ -195,7 +175,6 @@ const Page = () => {
             />
           </div>
 
-          {/* Form Section */}
           <div className="px-6 md:px-10 py-8 md:py-16 md:w-[50%] overflow-y-auto">
             <h1 className="text-3xl font-semibold text-green-800 mb-2">
               Register With Us

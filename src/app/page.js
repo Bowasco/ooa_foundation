@@ -11,7 +11,7 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Animated Counter Component
+
 function AnimatedCounter({ target, duration = 2000 }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -334,7 +334,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setModalOpen(true)}
-              className="border border-[#356149] text-[#356149] px-6 py-3 rounded-md font-medium hover:bg-yellow-600 hover:text-white transition"
+              className="border border-[#356149] text-[#356149] px-6 py-3 rounded-md font-medium hover:bg-green-600 hover:text-white transition"
             >
               PARTNER WITH US
             </motion.button>
