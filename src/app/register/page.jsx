@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import register from "../../../public/images/register.jpg";
+import register from "../../../public/images/27.jpg";
 import { supabase } from "@/lib/supabaseClient";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

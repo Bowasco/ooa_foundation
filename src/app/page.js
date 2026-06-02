@@ -97,7 +97,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative w-full h-screen overflow-hidden bg-gray-900">
+      <div className="relative w-full h-[80vh] overflow-hidden bg-gray-900">
         {slides.map((slide, index) => (
           <motion.div
             key={index}

@@ -17,6 +17,7 @@ const Navbar = () => {
     { href: "/about", label: "About Us" },
     { href: "/register", label: "Register with us" },
     { href: "/gallery", label: "Gallery" },
+    { href: "/academy", label: "Arise Academy" },
   ];
 
   const linkClass = (href) =>
