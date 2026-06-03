@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { ArrowRight, Scissors, Monitor, Sparkles, Leaf } from "lucide-react";
 
 function AnimatedCounter({ target, duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -200,6 +200,127 @@ export default function Home() {
                 Founder of Ogbeni Olajide Awe Foundation
               </p>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── ARISE ACADEMY CTA SECTION ── */}
+      <section className="bg-[#0F2347] py-20 overflow-hidden relative">
+        {/* subtle background ring decorations */}
+        <div className="absolute top-[-80px] right-[-80px] w-[320px] h-[320px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
+        <div className="absolute bottom-[-60px] left-[-60px] w-[240px] h-[240px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Top label */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center text-[#C9A84C] text-xs font-semibold uppercase tracking-[4px] mb-4"
+          >
+            Now Open — Cohort 1 · 2026 / 2027
+          </motion.p>
+
+          {/* Headline */}
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 max-w-3xl mx-auto"
+          >
+            The <span className="text-[#C9A84C]">Arise Academy</span> is here
+            for you
+          </motion.h2>
+
+          {/* Sub-copy */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center text-gray-300 text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+          >
+            Free vocational skills training, plus a seed capital grant to help
+            you start your own business. Open to young men and women aged 18-35
+            in Ijebu-Jesa and Iwoye-Ijesa, Oriade LGA.
+          </motion.p>
+
+          {/* 4 track cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.1 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-14"
+          >
+            {[
+              { icon: <Scissors size={22} />, label: "Fashion & Textile" },
+              { icon: <Monitor size={22} />, label: "Digital Skills" },
+              { icon: <Sparkles size={22} />, label: "Beauty & Wellness" },
+              { icon: <Leaf size={22} />, label: "Food & Agribusiness" },
+            ].map((track) => (
+              <motion.div
+                key={track.label}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 },
+                }}
+                className="flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-6 hover:bg-white/10 hover:border-[#C9A84C]/40 transition-all duration-300"
+              >
+                <span className="text-[#C9A84C]">{track.icon}</span>
+                <span className="text-white text-sm font-medium text-center leading-snug">
+                  {track.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Pill badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-3 mb-12"
+          >
+            {[
+              "100% Free",
+              "Seed Capital Grant",
+              "5-Month Programme",
+              "Deadline: 30 June 2026",
+            ].map((pill) => (
+              <span
+                key={pill}
+                className="bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-semibold px-4 py-2 rounded-full border border-[#C9A84C]/30 tracking-wide"
+              >
+                {pill}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* CTA button */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col items-center gap-3"
+          >
+            <Link href="/academy">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="flex items-center gap-3 bg-[#C9A84C] hover:bg-[#E8C96A] text-[#0F2347] font-bold text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg"
+              >
+                Apply Now — It's Free
+                <ArrowRight size={20} />
+              </motion.button>
+            </Link>
+            <p className="text-gray-400 text-sm">
+              Applications close 30th June 2026 · No fees, ever
+            </p>
           </motion.div>
         </div>
       </section>

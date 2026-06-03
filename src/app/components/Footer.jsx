@@ -28,6 +28,11 @@ const Footer = () => {
           </h4>
           <ul className="space-y-2 text-[15px] text-gray-300">
             <li>
+              <a href="/academy" className="hover:text-white">
+                Arise Academy
+              </a>
+            </li>
+            <li>
               <a href="/register" className="hover:text-white">
                 Register with us
               </a>
