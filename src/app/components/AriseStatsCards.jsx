@@ -16,7 +16,6 @@ export default function AriseStatsCards() {
 
       const total     = data.length;
       const available = data.filter(r => r.availability === "Yes — fully available").length;
-      const female    = data.filter(r => r.gender === "Female").length;
       const trackMap  = data.reduce((acc, r) => {
         const t = r.track?.split(":")[0] ?? "Unknown";
         acc[t] = (acc[t] || 0) + 1;
@@ -24,7 +23,7 @@ export default function AriseStatsCards() {
       }, {});
       const topTrack = Object.entries(trackMap).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "—";
 
-      setStats({ total, available, female, topTrack });
+      setStats({ total, available, topTrack });
     };
     load();
   }, []);
@@ -32,7 +31,6 @@ export default function AriseStatsCards() {
   const cards = [
     { label: "Total Applications", value: stats?.total ?? "—",     color: "bg-blue-50 border-blue-200",   text: "text-blue-700" },
     { label: "Fully Available",    value: stats?.available ?? "—", color: "bg-green-50 border-green-200", text: "text-green-700" },
-    { label: "Female Applicants",  value: stats?.female ?? "—",    color: "bg-purple-50 border-purple-200", text: "text-purple-700" },
     { label: "Top Track",          value: stats?.topTrack ?? "—",  color: "bg-yellow-50 border-yellow-200", text: "text-yellow-700" },
   ];
 

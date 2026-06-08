@@ -147,7 +147,7 @@ export default function Home() {
       </div>
 
       <section className="bg-[#f5faf8]">
-        <div className="grid md:grid-cols-2 min-h-[80vh]">
+        <div className="grid md:grid-cols-2 min-h-[40vh]">
           <div className="flex items-center px-6 md:px-16 py-16">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -175,7 +175,7 @@ export default function Home() {
           >
             <Image
               src={founder}
-              alt="Founder of Tanoto Foundation"
+              alt="Founder of OOA Foundation"
               className="h-full w-full object-cover"
             />
 
