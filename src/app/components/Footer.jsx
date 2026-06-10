@@ -90,7 +90,7 @@ const Footer = () => {
           <ul className="flex gap-4">
             <Link
               href={
-                "https://www.facebook.com/share/1bKLB1AzKJ/?mibextid=wwXIfr"
+                "https://www.facebook.com/ooafoundation4all"
               }
               className="p-2 bg-white/10 rounded hover:bg-white/20"
             >
@@ -105,7 +105,7 @@ const Footer = () => {
               <FaInstagram />
             </Link>
             <Link
-              href={"https://x.com/iamolajideawe?s=21"}
+              href={"https://x.com/official_OOAF"}
               className="p-2 bg-white/10 rounded hover:bg-white/20"
             >
               <FaXTwitter />

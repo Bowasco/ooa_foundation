@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Eye, Target } from "lucide-react";
 import founder from "../../public/images/founder.jpg";
+import jamb from "../../public/images/10.jpg";
+import jamb2 from "../../public/images/5.jpg";
 import hero from "../../public/images/hero.jpg";
 import hero2 from "../../public/images/hero2.jpg";
 import partnership from "../../public/images/partnership.jpg";
@@ -66,19 +68,19 @@ export default function Home() {
 
   const slides = [
     {
-      image: founder,
-      title: "Leave no child behind",
-      subtitle: "Let's give a voice to orphans and vulnerable children",
+      image: jamb,
+      title: "350 students. 2 years",
+      subtitle: "80% now in universities.",
     },
     {
-      image: hero,
-      title: "Education for all",
-      subtitle: "Every child deserves access to quality education",
+      image: jamb2,
+      title: "A JAMB form changed everything.",
+      subtitle: "We are poised to do more",
     },
     {
       image: hero2,
-      title: "Building futures together",
-      subtitle: "Join us in making a lasting impact on children's lives",
+      title: "Born on a birthday.",
+      subtitle: "Built for a generation.",
     },
   ];
 
@@ -187,17 +189,17 @@ export default function Home() {
             >
               <p className="text-white text-sm md:text-base leading-relaxed mb-4">
                 &quot;Education is the most powerful tool we can use to change
-                the lives. At the Olajide Awe foundation, we believe that every
+                lives. At the Olajide Awe foundation, we believe that every
                 child deserves the opportunity to reach their full
                 potential.&quot;
               </p>
 
               <p className="text-sm text-gray-300">
                 <span className="font-semibold text-white text-[30px]">
-                  Olajide Awe
+                  Chief Olajide Awe, Founder
                 </span>
                 <br />
-                Founder of Ogbeni Olajide Awe Foundation
+                Ogbeni Olajide Awe Foundation
               </p>
             </motion.div>
           </motion.div>
