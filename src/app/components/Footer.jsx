@@ -82,7 +82,11 @@ const Footer = () => {
           </h4>
 
           <p className="text-[15px] text-gray-300 mb-4">
-            ooafoundation4all@gmail.com
+            admin@ooa-foundation.com
+          </p>
+
+          <p className="text-[15px] text-gray-300 mb-4">
+            olajide.awe@ooa-foundation.com
           </p>
 
           <p className="text-[15px] text-gray-300 mb-4">+234 812 293 9984</p>
