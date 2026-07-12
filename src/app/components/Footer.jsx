@@ -28,6 +28,11 @@ const Footer = () => {
           </h4>
           <ul className="space-y-2 text-[15px] text-gray-300">
             <li>
+              <a href="/academy" className="hover:text-white">
+                Arise Academy
+              </a>
+            </li>
+            <li>
               <a href="/register" className="hover:text-white">
                 Register with us
               </a>
@@ -77,7 +82,11 @@ const Footer = () => {
           </h4>
 
           <p className="text-[15px] text-gray-300 mb-4">
-            ooafoundation4all@gmail.com
+            admin@ooa-foundation.com
+          </p>
+
+          <p className="text-[15px] text-gray-300 mb-4">
+            olajide.awe@ooa-foundation.com
           </p>
 
           <p className="text-[15px] text-gray-300 mb-4">+234 812 293 9984</p>
@@ -85,7 +94,7 @@ const Footer = () => {
           <ul className="flex gap-4">
             <Link
               href={
-                "https://www.facebook.com/share/1bKLB1AzKJ/?mibextid=wwXIfr"
+                "https://www.facebook.com/ooafoundation4all"
               }
               className="p-2 bg-white/10 rounded hover:bg-white/20"
             >
@@ -100,7 +109,7 @@ const Footer = () => {
               <FaInstagram />
             </Link>
             <Link
-              href={"https://x.com/iamolajideawe?s=21"}
+              href={"https://x.com/official_OOAF"}
               className="p-2 bg-white/10 rounded hover:bg-white/20"
             >
               <FaXTwitter />

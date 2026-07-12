@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Eye, Target } from "lucide-react";
 import founder from "../../public/images/founder.jpg";
+import jamb from "../../public/images/10.jpg";
+import jamb2 from "../../public/images/5.jpg";
 import hero from "../../public/images/hero.jpg";
 import hero2 from "../../public/images/hero2.jpg";
 import partnership from "../../public/images/partnership.jpg";
@@ -10,8 +12,8 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Scissors, Monitor, Sparkles, Leaf } from "lucide-react";
 
-// Animated Counter Component
 function AnimatedCounter({ target, duration = 2000 }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -66,19 +68,19 @@ export default function Home() {
 
   const slides = [
     {
-      image: founder,
-      title: "Leave no child behind",
-      subtitle: "Let's give a voice to orphans and vulnerable children",
+      image: jamb,
+      title: "350 students. 2 years",
+      subtitle: "80% now in universities.",
     },
     {
-      image: hero,
-      title: "Education for all",
-      subtitle: "Every child deserves access to quality education",
+      image: jamb2,
+      title: "A JAMB form changed everything.",
+      subtitle: "We are poised to do more",
     },
     {
       image: hero2,
-      title: "Building futures together",
-      subtitle: "Join us in making a lasting impact on children's lives",
+      title: "Born on a birthday.",
+      subtitle: "Built for a generation.",
     },
   ];
 
@@ -97,7 +99,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative w-full h-screen overflow-hidden bg-gray-900">
+      <div className="relative w-full h-[80vh] overflow-hidden bg-gray-900">
         {slides.map((slide, index) => (
           <motion.div
             key={index}
@@ -147,7 +149,7 @@ export default function Home() {
       </div>
 
       <section className="bg-[#f5faf8]">
-        <div className="grid md:grid-cols-2 min-h-[80vh]">
+        <div className="grid md:grid-cols-2 min-h-[40vh]">
           <div className="flex items-center px-6 md:px-16 py-16">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -175,7 +177,7 @@ export default function Home() {
           >
             <Image
               src={founder}
-              alt="Founder of Tanoto Foundation"
+              alt="Founder of OOA Foundation"
               className="h-full w-full object-cover"
             />
 
@@ -187,19 +189,140 @@ export default function Home() {
             >
               <p className="text-white text-sm md:text-base leading-relaxed mb-4">
                 &quot;Education is the most powerful tool we can use to change
-                the lives. At the Olajide Awe foundation, we believe that every
+                lives. At the Olajide Awe foundation, we believe that every
                 child deserves the opportunity to reach their full
                 potential.&quot;
               </p>
 
               <p className="text-sm text-gray-300">
                 <span className="font-semibold text-white text-[30px]">
-                  Olajide Awe
+                  Chief Olajide Awe, Founder
                 </span>
                 <br />
-                Founder of Ogbeni Olajide Awe Foundation
+                Ogbeni Olajide Awe Foundation
               </p>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── ARISE ACADEMY CTA SECTION ── */}
+      <section className="bg-[#0F2347] py-20 overflow-hidden relative">
+        {/* subtle background ring decorations */}
+        <div className="absolute top-[-80px] right-[-80px] w-[320px] h-[320px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
+        <div className="absolute bottom-[-60px] left-[-60px] w-[240px] h-[240px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Top label */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center text-[#C9A84C] text-xs font-semibold uppercase tracking-[4px] mb-4"
+          >
+            Now Open — Cohort 1 · 2026 / 2027
+          </motion.p>
+
+          {/* Headline */}
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 max-w-3xl mx-auto"
+          >
+            The <span className="text-[#C9A84C]">Arise Academy</span> is here
+            for you
+          </motion.h2>
+
+          {/* Sub-copy */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center text-gray-300 text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+          >
+            Free vocational skills training, plus a seed capital grant to help
+            you start your own business. Open to young men and women aged 18-35
+            in Ijebu-Jesa and Iwoye-Ijesa, Oriade LGA.
+          </motion.p>
+
+          {/* 4 track cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.1 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-14"
+          >
+            {[
+              { icon: <Scissors size={22} />, label: "Fashion & Textile" },
+              { icon: <Monitor size={22} />, label: "Digital Skills" },
+              { icon: <Sparkles size={22} />, label: "Beauty & Wellness" },
+              { icon: <Leaf size={22} />, label: "Food & Agribusiness" },
+            ].map((track) => (
+              <motion.div
+                key={track.label}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 },
+                }}
+                className="flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-6 hover:bg-white/10 hover:border-[#C9A84C]/40 transition-all duration-300"
+              >
+                <span className="text-[#C9A84C]">{track.icon}</span>
+                <span className="text-white text-sm font-medium text-center leading-snug">
+                  {track.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Pill badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-3 mb-12"
+          >
+            {[
+              "100% Free",
+              "Seed Capital Grant",
+              "5-Month Programme",
+              "Deadline: 30 June 2026",
+            ].map((pill) => (
+              <span
+                key={pill}
+                className="bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-semibold px-4 py-2 rounded-full border border-[#C9A84C]/30 tracking-wide"
+              >
+                {pill}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* CTA button */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col items-center gap-3"
+          >
+            <Link href="/academy">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="flex items-center gap-3 bg-[#C9A84C] hover:bg-[#E8C96A] text-[#0F2347] font-bold text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg"
+              >
+                Apply Now — It's Free
+                <ArrowRight size={20} />
+              </motion.button>
+            </Link>
+            <p className="text-gray-400 text-sm">
+              Applications close 30th June 2026 · No fees, ever
+            </p>
           </motion.div>
         </div>
       </section>
@@ -334,7 +457,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setModalOpen(true)}
-              className="border border-[#356149] text-[#356149] px-6 py-3 rounded-md font-medium hover:bg-yellow-600 hover:text-white transition"
+              className="border border-[#356149] text-[#356149] px-6 py-3 rounded-md font-medium hover:bg-green-600 hover:text-white transition"
             >
               PARTNER WITH US
             </motion.button>

@@ -5,10 +5,27 @@ import logo from "../../../public/images/logo.jpg";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/register", label: "Register with us" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/academy", label: "Arise Academy" },
+  ];
+
+  const linkClass = (href) =>
+    `hover:text-green-800 cursor-pointer transition-all duration-200 ${
+      pathname === href
+        ? "text-green-800 font-semibold border-b-2 border-green-800 pb-0.5"
+        : "text-gray-700"
+    }`;
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -17,31 +34,18 @@ const Navbar = () => {
           <Image src={logo} alt="" className="w-[100px] h-[40px]" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm text-gray-700">
-          <Link href={"/"} className="hover:text-green-800 cursor-pointer">
-            Home
-          </Link>
-          <Link href={"/about"} className="hover:text-green-800 cursor-pointer">
-            About Us
-          </Link>
-          <Link
-            href={"/register"}
-            className="hover:text-green-800 cursor-pointer"
-          >
-            Register with us
-          </Link>
-          <Link
-            href={"/gallery"}
-            className="hover:text-green-800 cursor-pointer"
-          >
-            Gallery
-          </Link>
+        <ul className="hidden md:flex items-center gap-8 text-[15px]">
+          {navLinks.map(({ href, label }) => (
+            <Link key={href} href={href} className={linkClass(href)}>
+              {label}
+            </Link>
+          ))}
         </ul>
 
         <div className="hidden md:block">
           <button
             onClick={() => setModalOpen(true)}
-            className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-yellow-600 hover:text-white transition"
+            className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-green-600 hover:text-white hover:border-0 transition-all duration-300 ease-in-out"
           >
             Partner With Us
           </button>
@@ -57,7 +61,6 @@ const Navbar = () => {
                 Our partnership program is currently being set up. Please check
                 back soon.
               </p>
-
               <button
                 onClick={() => setModalOpen(false)}
                 className="bg-green-800 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
@@ -79,13 +82,21 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-white border-t">
-          <ul className="flex flex-col gap-4 px-6 py-6 text-gray-700 text-sm">
-            <Link href={"/"}>Home</Link>
-            <Link href={"/about"}>About Us</Link>
-            <Link href={"/register"}>Register with us</Link>
-            <Link href={"/gallery"}>Gallery</Link>
-
-            <button className="mt-4 border border-yellow-600 text-yellow-600 px-5 py-2 rounded-md text-sm font-medium">
+          <ul className="flex flex-col gap-4 px-6 py-6 text-sm">
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={linkClass(href)}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            <button
+              onClick={() => setModalOpen(true)}
+              className="border border-[#356149] text-[#356149] px-5 py-2 rounded-md text-sm font-medium hover:bg-green-600 hover:text-white hover:border-0 transition-all duration-300 ease-in-out"
+            >
               Partner With Us
             </button>
           </ul>

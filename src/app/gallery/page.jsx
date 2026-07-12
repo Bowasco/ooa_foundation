@@ -1,7 +1,15 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const ITEMS_PER_PAGE = 20;
 
 const page = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const galleryImages = [
     { id: 48, src: "/images/46.jpg", alt: "Event 48" },
     { id: 47, src: "/images/45.jpg", alt: "Event 47" },
@@ -54,37 +62,110 @@ const page = () => {
     { id: 46, src: "/images/hero.jpg", alt: "Event 46" },
     { id: 49, src: "/images/47.jpg", alt: "Event 49" },
   ];
+
+  const totalPages = Math.ceil(galleryImages.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentImages = galleryImages.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.06 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <>
       <section
         className="w-full h-[65vh] bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/38.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center">
-          <h2 className="text-white text-4xl md:text-[60px] font-bold">
-            Gallery
-          </h2>
+          <h2 className="text-white text-4xl md:text-[60px] font-bold">Gallery</h2>
           <p className="mt-3 text-white/90 text-lg md:text-[20px]">
             Ogbeni Olajide Awe Foundation
           </p>
         </div>
       </section>
+
       <div className="min-h-screen bg-gray-100 p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {galleryImages.map((image) => (
-            <div
-              key={image.id}
-              className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white aspect-square"
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit={{ opacity: 0 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          >
+            {currentImages.map((image) => (
+              <motion.div
+                key={image.id}
+                variants={item}
+                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white aspect-square"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Pagination */}
+        <div className="flex items-center justify-center gap-2 mt-10 pb-6">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="p-2 rounded-md border border-gray-300 text-gray-600 hover:bg-green-800 hover:text-white hover:border-green-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className={`w-9 h-9 rounded-md text-sm font-medium border transition-all duration-200 ${
+                currentPage === page
+                  ? "bg-green-800 text-white border-green-800"
+                  : "border-gray-300 text-gray-600 hover:bg-green-800 hover:text-white hover:border-green-800"
+              }`}
             >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+              {page}
+            </button>
           ))}
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-md border border-gray-300 text-gray-600 hover:bg-green-800 hover:text-white hover:border-green-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
+
+        <p className="text-center text-sm text-gray-500 pb-8">
+          Page {currentPage} of {totalPages} · {galleryImages.length} photos
+        </p>
       </div>
     </>
   );
