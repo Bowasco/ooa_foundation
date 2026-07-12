@@ -69,8 +69,8 @@ export default function Home() {
   const slides = [
     {
       image: jamb,
-      title: "350 students. 2 years",
-      subtitle: "80% now in universities.",
+      title: "350 beneficiaries in 2 years",
+      subtitle: "Many beneficiaries have gained admission to higher institutions nationwide.",
     },
     {
       image: jamb2,
@@ -79,7 +79,7 @@ export default function Home() {
     },
     {
       image: hero2,
-      title: "Born on a birthday.",
+      title: "Inspired by a birthday.",
       subtitle: "Built for a generation.",
     },
   ];
@@ -99,7 +99,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="relative w-full h-[80vh] overflow-hidden bg-gray-900">
+      <header className="relative w-full h-[80vh] overflow-hidden bg-gray-900">
         {slides.map((slide, index) => (
           <motion.div
             key={index}
@@ -131,7 +131,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-5xl md:text-7xl font-bold text-center mb-6"
+                className="text-[35px] md:text-[45px] font-bold text-center mb-4"
               >
                 {slide.title}
               </motion.h1>
@@ -146,7 +146,7 @@ export default function Home() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </header>
 
       <section className="bg-[#f5faf8]">
         <div className="grid md:grid-cols-2 min-h-[40vh]">
@@ -321,7 +321,7 @@ export default function Home() {
               </motion.button>
             </Link>
             <p className="text-gray-400 text-sm">
-              Applications close 30th June 2026 · No fees, ever
+              Applications close 30th August 2026 · No fees, ever
             </p>
           </motion.div>
         </div>

@@ -980,7 +980,7 @@ export default function AriseAcademy() {
               letterSpacing: "0.5px",
             }}
           >
-            ⏰ Application Deadline: 30th June 2026
+            ⏰ Application Deadline: 30th August 2026
           </div>
         </div>
 
@@ -1973,7 +1973,7 @@ function Header() {
             "Free Training",
             "Seed Capital Grant",
             "Oriade LGA",
-            "Closes 30 June 2026",
+            "Closes 30 August 2026",
           ].map((p) => (
             <span
               key={p}
