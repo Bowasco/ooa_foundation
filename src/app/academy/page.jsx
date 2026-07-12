@@ -855,7 +855,7 @@ export default function AriseAcademy() {
           background: C.navy,
           padding: "16px 24px",
           position: "sticky",
-          top: 0,
+          top: 70,
           zIndex: 100,
           boxShadow: "0 2px 20px rgba(0,0,0,0.2)",
         }}

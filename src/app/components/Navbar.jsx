@@ -28,7 +28,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-1000 bg-white shadow-sm">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link href={"/"} className="text-xl font-semibold text-green-800">
           <Image src={logo} alt="" className="w-[100px] h-[40px]" />

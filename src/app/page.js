@@ -291,7 +291,7 @@ export default function Home() {
               "100% Free",
               "Seed Capital Grant",
               "5-Month Programme",
-              "Deadline: 30 June 2026",
+              "Deadline: 30 August 2026",
             ].map((pill) => (
               <span
                 key={pill}
