@@ -814,11 +814,11 @@ export default function AriseAcademy() {
             >
               Please <strong>save or screenshot your reference number</strong>.
               We will be in touch via WhatsApp or phone within 14 days of the
-              application deadline (30th June 2026).
+              application deadline (30th August 2026).
             </p>
             <p style={{ fontSize: 12, color: C.mid, marginTop: 16 }}>
-              Applications close 30th June 2026. Shortlisting begins 1st July
-              2026. Selections confirmed by 20th July 2026.
+              Applications close 30th August 2026. Shortlisting begins 15th September
+              2026. Selections confirmed by 20th September 2026.
             </p>
             <div
               style={{
@@ -1421,8 +1421,8 @@ export default function AriseAcademy() {
                 },
                 {
                   emoji: "💻",
-                  name: "Digital Skills & Creative Enterprise",
-                  desc: "Content creation, social media, Canva graphic design, e-commerce, digital marketing",
+                  name: "Digital Skills, Technology & Creative Enterprise",
+                  desc: "Content creation, Social media, Canva graphic design, E-commerce, Digital marketing, Mobile phone repair, Solar installation",
                   val: "Track 2: Digital Skills & Creative Enterprise",
                 },
                 {
